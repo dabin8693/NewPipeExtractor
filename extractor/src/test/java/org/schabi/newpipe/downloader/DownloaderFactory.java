@@ -38,6 +38,7 @@ public class DownloaderFactory {
      */
     public static Downloader getDownloader(final String path) {
         final DownloaderType type = getDownloaderType();
+        System.out.println("타입: " + type.toString() + "\njvm-input: " + System.getProperty("downloader"));
         switch (type) {
             case REAL:
                 return DownloaderTestImpl.getInstance();
