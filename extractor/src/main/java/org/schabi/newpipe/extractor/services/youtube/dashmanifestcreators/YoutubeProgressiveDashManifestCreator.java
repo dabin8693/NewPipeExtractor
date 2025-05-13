@@ -77,7 +77,7 @@ public final class YoutubeProgressiveDashManifestCreator {
      * @return the manifest generated into a string
      */
     @Nonnull
-    public static String fromProgressiveStreamingUrl(
+    public static String fromProgressiveStreamingUrl( // PROGRESSIVE_HTTP 매니페스트 생성
             @Nonnull final String progressiveStreamingBaseUrl,
             @Nonnull final ItagItem itagItem,
             final long durationSecondsFallback) throws CreationException {
@@ -105,7 +105,7 @@ public final class YoutubeProgressiveDashManifestCreator {
         generateBaseUrlElement(doc, progressiveStreamingBaseUrl);
         generateSegmentBaseElement(doc, itagItem);
         generateInitializationElement(doc, itagItem);
-
+        System.out.println("PROGRESSIVE_HTTP 매니페스트 생성");
         return buildAndCacheResult(progressiveStreamingBaseUrl, doc,
                 PROGRESSIVE_STREAMS_CACHE);
     }

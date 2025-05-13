@@ -98,7 +98,7 @@ public final class YoutubeOtfDashManifestCreator {
      * @return the manifest generated into a string
      */
     @Nonnull
-    public static String fromOtfStreamingUrl(
+    public static String fromOtfStreamingUrl( //dash 매니페스트 생성
             @Nonnull final String otfBaseStreamingUrl,
             @Nonnull final ItagItem itagItem,
             final long durationSecondsFallback) throws CreationException {
@@ -153,7 +153,7 @@ public final class YoutubeOtfDashManifestCreator {
         generateSegmentTemplateElement(doc, realOtfBaseStreamingUrl, DeliveryType.OTF);
         generateSegmentTimelineElement(doc);
         generateSegmentElementsForOtfStreams(segmentDuration, doc);
-
+        System.out.println("DASH 매니페스트 생성");
         return buildAndCacheResult(otfBaseStreamingUrl, doc, OTF_STREAMS_CACHE);
     }
 
