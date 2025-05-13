@@ -127,6 +127,10 @@ class YoutubeDashManifestCreatorsTest {
             //noinspection ConstantConditions
             final String manifest = YoutubeOtfDashManifestCreator.fromOtfStreamingUrl(
                     stream.getContent(), stream.getItagItem(), videoLength);
+            System.out.println("매니페스트str: " + manifest);
+            System.out.println("stream컨텐츠str : " + stream.getContent());
+            System.out.println("streamItagItemstr : " + stream.getItagItem());
+            System.out.println("매니페스트videoLength : " + videoLength);
             assertNotBlank(manifest);
 
             assertManifestGenerated(
@@ -147,6 +151,10 @@ class YoutubeDashManifestCreatorsTest {
             final String manifest =
                     YoutubeProgressiveDashManifestCreator.fromProgressiveStreamingUrl(
                             stream.getContent(), stream.getItagItem(), videoLength);
+            System.out.println("매니페스트str: " + manifest);
+            System.out.println("stream컨텐츠str : " + stream.getContent());
+            System.out.println("streamItagItemstr : " + stream.getItagItem());
+            System.out.println("매니페스트videoLength : " + videoLength); //4719
             assertNotBlank(manifest);
 
             assertManifestGenerated(

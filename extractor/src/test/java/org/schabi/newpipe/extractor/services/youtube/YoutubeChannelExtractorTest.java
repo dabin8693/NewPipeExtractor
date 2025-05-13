@@ -42,6 +42,8 @@ public class YoutubeChannelExtractorTest {
     public static class NotAvailable {
         @BeforeAll
         public static void setUp() {
+            // vm옵션 -Ddownloader=REAL, MOCK, RECORDING
+            // real이 기본값
             YoutubeTestsUtils.ensureStateless();
             NewPipe.init(DownloaderFactory.getDownloader(RESOURCE_PATH + "notAvailable"));
         }
